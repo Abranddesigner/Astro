@@ -221,3 +221,139 @@ body {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
 }
+
+/* Testimonial Section */
+.testimonials {
+  background: #102d27;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.testimonials h2 span {
+  color: #fcd144;
+}
+
+.testimonial-slider {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: #0e4031;
+  padding: 20px;
+  border-radius: 10px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.testimonial.active {
+  display: block;
+  opacity: 1;
+}
+
+.testimonial img {
+  border-radius: 50%;
+  width: 60px;
+  margin-bottom: 10px;
+  border: 2px solid #fcd144;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #062c21;
+  color: #ffffff;
+  padding: 40px 20px;
+}
+
+.footer div {
+  flex: 1 1 250px;
+  margin: 10px;
+}
+
+.footer h4 {
+  color: #fcd144;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #fcd144;
+  color: #102d27;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+  color: #d1e7dd;
+}
+
+.footer img {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.copyright {
+  text-align: center;
+  background: #051d17;
+  color: #ccc;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Fade-in scroll animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .floating-buttons {
+    flex-direction: column;
+    align-items: flex-end;
+    top: auto;
+    bottom: 10%;
+  }
+
+  .slide-content h2 {
+    font-size: 18px;
+  }
+
+  .slide-content p {
+    font-size: 14px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
