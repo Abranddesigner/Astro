@@ -1,30 +1,33 @@
-let currentSlide = 0;
-const slides = document.querySelector('.slides');
-const totalSlides = slides.children.length;
+// Banner slider auto play
+let slideIndex = 0;
+const slides = document.querySelectorAll(".banner-slider .slide");
 
 function showSlide(index) {
-  const offset = -index * 100;
-  slides.style.transform = `translateX(${offset}%)`;
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    if (i === index) slide.classList.add("active");
+  });
 }
 
 function nextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  showSlide(currentSlide);
+  slideIndex = (slideIndex + 1) % slides.length;
+  showSlide(slideIndex);
 }
 
 setInterval(nextSlide, 4000);
+showSlide(slideIndex);
 
-// Testimonials auto scroll
+// Testimonial auto scroll
 let testimonialIndex = 0;
+const testimonials = document.querySelectorAll(".testimonial");
+
 function rotateTestimonials() {
-  const testimonialSlider = document.querySelector('.testimonial-slider');
-  const testimonials = testimonialSlider.children;
-  for (let i = 0; i < testimonials.length; i++) {
-    testimonials[i].style.display = 'none';
-  }
-  testimonials[testimonialIndex].style.display = 'block';
+  testimonials.forEach((t, i) => {
+    t.classList.remove("active");
+    if (i === testimonialIndex) t.classList.add("active");
+  });
   testimonialIndex = (testimonialIndex + 1) % testimonials.length;
 }
 
-setInterval(rotateTestimonials, 3000);
-window.addEventListener('DOMContentLoaded', rotateTestimonials);
+setInterval(rotateTestimonials, 3500);
+rotateTestimonials();
