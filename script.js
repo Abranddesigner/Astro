@@ -1,33 +1,51 @@
-// Banner slider auto play
-let slideIndex = 0;
-const slides = document.querySelectorAll(".banner-slider .slide");
+// ===== Banner Slider ===== //
+let currentBanner = 0;
+const banners = document.querySelectorAll(".banner-slider .slide");
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
+function showBanner(index) {
+  banners.forEach((slide, i) => {
     slide.classList.remove("active");
     if (i === index) slide.classList.add("active");
   });
 }
 
-function nextSlide() {
-  slideIndex = (slideIndex + 1) % slides.length;
-  showSlide(slideIndex);
+function nextBanner() {
+  currentBanner = (currentBanner + 1) % banners.length;
+  showBanner(currentBanner);
 }
 
-setInterval(nextSlide, 4000);
-showSlide(slideIndex);
+setInterval(nextBanner, 5000); // Change every 5 seconds
 
-// Testimonial auto scroll
-let testimonialIndex = 0;
-const testimonials = document.querySelectorAll(".testimonial");
+// ===== Testimonial Slider ===== //
+let currentTestimonial = 0;
+const testimonials = document.querySelectorAll(".testimonial-slider .testimonial");
 
-function rotateTestimonials() {
-  testimonials.forEach((t, i) => {
-    t.classList.remove("active");
-    if (i === testimonialIndex) t.classList.add("active");
+function showTestimonial(index) {
+  testimonials.forEach((item, i) => {
+    item.classList.remove("active");
+    if (i === index) item.classList.add("active");
   });
-  testimonialIndex = (testimonialIndex + 1) % testimonials.length;
 }
 
-setInterval(rotateTestimonials, 3500);
-rotateTestimonials();
+function nextTestimonial() {
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  showTestimonial(currentTestimonial);
+}
+
+setInterval(nextTestimonial, 4000); // Rotate every 4 seconds
+
+// ===== Optional: Animate on Scroll (basic fade-in) ===== //
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+document.querySelectorAll('.feature-boxes .box, .testimonial').forEach(el => {
+  el.classList.add('fade-in');
+  observer.observe(el);
+});
