@@ -2,65 +2,80 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
     overflow-x: hidden;
-    background: #f0f4f8;
+    background: #f4f4f4;
 }
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
     color: white;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     position: relative;
 }
 
 .header-top {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 15px;
+    gap: 10px;
 }
 
 .header-top .satisfaction {
     background: #d4af37;
-    color: #1e3a8a;
-    padding: 10px;
+    color: #1a1a1a;
+    padding: 8px 15px;
     border-radius: 5px;
+    font-size: 1rem;
     animation: blink 1.5s infinite;
 }
 
 .header-top .advice {
-    max-width: 40%;
-    font-size: 1.1rem;
+    flex: 1;
+    min-width: 200px;
+    font-size: 0.9rem;
+    text-align: left;
 }
 
 .header-top .slide-text {
-    max-width: 40%;
-    font-size: 1.1rem;
+    flex: 1;
+    min-width: 200px;
+    font-size: 0.9rem;
+    text-align: right;
     animation: slideText 10s linear infinite;
 }
 
 .header-mid {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
+    gap: 10px;
 }
 
 .header-mid img {
-    height: 60px;
+    height: 50px;
+    max-width: 100%;
+}
+
+.header-mid nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .header-mid nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: color 0.3s;
 }
 
@@ -69,15 +84,15 @@ header {
 }
 
 .header-bottom {
-    padding: 15px;
-    font-size: 1.2rem;
+    padding: 10px;
+    font-size: 1rem;
     animation: textBlink 2s ease-in-out infinite;
 }
 
 /* Banner Styles */
 .banner {
     position: relative;
-    height: 500px;
+    height: 400px;
     overflow: hidden;
 }
 
@@ -103,25 +118,25 @@ header {
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    background: rgba(30, 58, 138, 0.8);
-    padding: 20px;
-    border-radius: 10px;
+    background: rgba(26, 26, 26, 0.8);
+    padding: 15px;
+    border-radius: 8px;
     animation: fadeIn 2s ease-in-out;
 }
 
 .banner-text h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
 .banner-text p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
 
 .banner-text .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 8px 15px;
     margin: 5px;
     text-decoration: none;
     color: white;
@@ -135,7 +150,7 @@ header {
 }
 
 .call-btn {
-    background: #1e3a8a;
+    background: #1a1a1a;
     animation: blink 1.5s infinite;
 }
 
@@ -146,53 +161,56 @@ header {
 
 /* Main Section */
 .main {
-    padding: 50px 20px;
+    padding: 40px 15px;
     text-align: center;
     background: #ffffff;
 }
 
 .main h1 {
-    font-size: 3rem;
-    color: #1e3a8a;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 15px;
 }
 
 .main .why-choose {
-    font-size: 2.5rem;
-    background: linear-gradient(45deg, #1e3a8a, #d4af37);
+    font-size: 2rem;
+    background: linear-gradient(45deg, #1a1a1a, #d4af37);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .main p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto 30px;
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto 20px;
     color: #4b5563;
 }
 
 .animation-border {
     border: 2px solid #d4af37;
-    border-radius: 10px;
+    border-radius: 8px;
+    height: 4px;
+    width: 100px;
+    margin: 0 auto 20px;
     animation: borderPulse 2s infinite;
 }
 
 /* Boxes */
 .boxes {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    padding: 15px;
 }
 
 .box {
-    background: #f0f4f8;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transform: translateY(50px);
+    transform: translateY(40px);
     opacity: 0;
     transition: all 0.5s ease-out;
 }
@@ -203,26 +221,35 @@ header {
 }
 
 .box img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     animation: rotate 5s linear infinite;
+}
+
+.box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.box p {
+    font-size: 0.9rem;
 }
 
 /* Stats Banner */
 .stats-banner {
     background: url('https://ik.imagekit.io/pinet/Form/Astro%20Banner.jpg?updatedAt=1754932900879') no-repeat center/cover;
-    padding: 50px 20px;
+    padding: 40px 15px;
     color: white;
     text-align: center;
 }
 
 .stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 15px;
 }
 
 .stat {
@@ -230,73 +257,79 @@ header {
 }
 
 .stat h3 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
     animation: bounce 2s infinite;
+}
+
+.stat p {
+    font-size: 0.9rem;
 }
 
 /* Why Choose Us Section */
 .why-choose-section {
     display: flex;
     flex-wrap: wrap;
-    padding: 50px 20px;
-    background: #f0f4f8;
+    padding: 40px 15px;
+    background: #f4f4f4;
+    gap: 15px;
 }
 
 .why-choose-section .left {
     flex: 1;
-    min-width: 300px;
-    padding: 20px;
+    min-width: 250px;
+    padding: 15px;
 }
 
 .why-choose-section .right img {
     width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
+    max-width: 350px;
+    border-radius: 8px;
 }
 
 .why-choose-section .icon {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin: 10px 0;
-    color: #1e3a8a;
+    color: #1a1a1a;
+    font-size: 0.9rem;
 }
 
 .why-choose-section .icon::before {
     content: '★';
-    margin-right: 10px;
+    margin-right: 8px;
     color: #d4af37;
     animation: bounce 2s infinite;
 }
 
 /* Testimonials */
 .testimonials {
-    padding: 50px 20px;
+    padding: 40px 15px;
     background: #ffffff;
     text-align: center;
 }
 
 .testimonials h2 {
-    font-size: 2.5rem;
-    background: linear-gradient(45deg, #1e3a8a, #d4af37);
+    font-size: 2rem;
+    background: linear-gradient(45deg, #1a1a1a, #d4af37);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .testimonial-slider {
     overflow: hidden;
     position: relative;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
 .testimonial {
     display: none;
-    padding: 20px;
-    background: #f0f4f8;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial.active {
@@ -305,36 +338,46 @@ header {
 }
 
 .testimonial img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.testimonial p {
+    font-size: 0.9rem;
+}
+
+.testimonial h4 {
+    font-size: 1rem;
 }
 
 /* Footer */
 footer {
-    background: #1e3a8a;
+    background: #1a1a1a;
     color: white;
-    padding: 50px 20px;
+    padding: 40px 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 15px;
 }
 
 footer .left, footer .mid, footer .right {
     flex: 1;
-    min-width: 250px;
-    padding: 20px;
+    min-width: 200px;
+    padding: 15px;
 }
 
 footer img {
-    height: 60px;
-    margin-bottom: 15px;
+    height: 50px;
+    margin-bottom: 10px;
+    max-width: 100%;
 }
 
 footer .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 8px 15px;
     margin: 5px;
     text-decoration: none;
     color: white;
@@ -344,6 +387,21 @@ footer .btn {
 
 footer .btn:hover {
     transform: scale(1.05);
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin: 5px 0;
+    font-size: 0.9rem;
 }
 
 /* Animations */
@@ -369,7 +427,7 @@ footer .btn:hover {
 
 @keyframes borderPulse {
     0%, 100% { border-color: #d4af37; }
-    50% { border-color: #1e3a8a; }
+    50% { border-color: #1a1a1a; }
 }
 
 @keyframes rotate {
@@ -379,7 +437,7 @@ footer .btn:hover {
 
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-8px); }
 }
 
 @keyframes slideIn {
@@ -389,18 +447,29 @@ footer .btn:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .header-top, .header-mid, .why-choose-section {
+    .header-top {
         flex-direction: column;
         text-align: center;
     }
 
     .header-top .advice, .header-top .slide-text {
         max-width: 100%;
-        margin: 10px 0;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    .header-mid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-mid nav {
+        flex-direction: column;
+        gap: 8px;
     }
 
     .banner {
-        height: 300px;
+        height: 250px;
     }
 
     .banner-text h2 {
@@ -408,10 +477,70 @@ footer .btn:hover {
     }
 
     .banner-text p {
-        font-size: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .banner-text .btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .main h1 {
+        font-size: 2rem;
+    }
+
+    .main .why-choose {
+        font-size: 1.5rem;
     }
 
     .boxes, .stats {
         grid-template-columns: 1fr;
+    }
+
+    .why-choose-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .testimonials h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: 200px;
+    }
+
+    .banner-text h2 {
+        font-size: 1.2rem;
+    }
+
+    .banner-text p {
+        font-size: 0.75rem;
+    }
+
+    .main h1 {
+        font-size: 1.8rem;
+    }
+
+    .main .why-choose {
+        font-size: 1.3rem;
+    }
+
+    .box h3 {
+        font-size: 1rem;
+    }
+
+    .box p {
+        font-size: 0.8rem;
+    }
+
+    .stat h3 {
+        font-size: 1.5rem;
+    }
+
+    .stat p {
+        font-size: 0.8rem;
     }
 }
