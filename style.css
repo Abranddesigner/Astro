@@ -622,11 +622,15 @@ header {
     color: #FFFFFF;
 }
 
+/* Center the slider container */
 .testimonial-slider {
     overflow: hidden;
     position: relative;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 auto; /* Center horizontally */
+    display: flex;
+    justify-content: center; /* Center testimonials inside */
+    align-items: center;
 }
 
 .testimonial {
@@ -635,6 +639,8 @@ header {
     background: #1a1a1a;
     border-radius: 8px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* prevent stretching */
+    width: 100%;
 }
 
 .testimonial.active {
@@ -657,6 +663,12 @@ header {
 .testimonial h4 {
     font-size: 1rem;
     color: #D4A017;
+}
+
+/* Animation */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Footer */
@@ -940,6 +952,7 @@ footer ul li a:hover {
         height: 60px; /* Adjusted logo size for smaller screens */
     }
 }
+
 
 
 
