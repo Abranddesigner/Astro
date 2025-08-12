@@ -606,12 +606,27 @@ footer .btn:hover {
 
 footer ul {
     list-style: none;
+    padding: 0;
 }
 
 footer ul li {
     margin: 5px 0;
     font-size: 0.9rem;
     color: #FFFFFF;
+}
+
+/* WhatsApp clickable links in footer */
+footer ul li a {
+    color: #FFFFFF !important; /* Always white */
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s;
+}
+
+footer ul li a:hover {
+    color: #FFFFFF !important; /* Still white on hover */
+    transform: scale(1.05); /* Slight zoom */
+    text-decoration: underline; /* Optional underline */
 }
 
 /* Animations */
@@ -827,6 +842,7 @@ footer ul li {
         height: 60px; /* Adjusted logo size for smaller screens */
     }
 }
+
 
 
 
