@@ -30,6 +30,7 @@ body {
 }
 
 /* Header Styles */
+/* Header Styles */
 header {
     background: #000000;
     color: #FFFFFF;
@@ -79,7 +80,7 @@ header {
 }
 
 .header-mid img {
-    height: 80px; /* Increased logo size */
+    height: 80px; /* Larger logo size */
     max-width: 100%;
 }
 
@@ -114,6 +115,86 @@ header {
     font-size: 1rem;
     animation: textBlink 2s ease-in-out infinite;
     color: #FFFFFF;
+}
+
+/* Animations */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes slideText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes textBlink {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.05); }
+}
+
+/* Responsive Design for Header */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .highlight-box {
+        max-width: 100%;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    .header-top .slide-text {
+        max-width: 100%;
+        text-align: center;
+        font-size: 0.75rem;
+        white-space: normal;
+        animation: none;
+        display: block;
+        padding: 10px;
+    }
+
+    .header-mid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-mid nav {
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        padding: 10px;
+        background: #000000;
+    }
+
+    .header-mid nav.active {
+        display: flex;
+    }
+
+    .header-mid img {
+        height: 60px; /* Adjusted logo size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .highlight-box {
+        font-size: 0.9rem;
+    }
+
+    .header-bottom {
+        font-size: 0.9rem;
+    }
+
+    .header-mid nav a {
+        font-size: 0.9rem;
+    }
 }
 
 /* Banner Styles */
@@ -674,3 +755,4 @@ footer ul li {
         height: 60px; /* Adjusted logo size for smaller screens */
     }
 }
+
