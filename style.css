@@ -40,13 +40,15 @@ header {
     z-index: 1;
 }
 
+/* ===== Top Header ===== */
 .header-top {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
+    padding: 8px 15px;
     gap: 10px;
+    background: #000;
+    flex-wrap: nowrap;
 }
 
 .highlight-box {
@@ -59,8 +61,11 @@ header {
     text-decoration: none;
     animation: colorPulse 3s ease-in-out infinite;
     transition: transform 0.3s ease, background 0.3s ease;
+    white-space: nowrap;
     text-align: center;
+    cursor: pointer;
 }
+
 .highlight-box:hover {
     transform: scale(1.05);
 }
@@ -73,20 +78,26 @@ header {
 }
 
 .header-top .slide-text {
-    flex: 1 1 auto;
+    flex: 1;
     font-size: 0.9rem;
     text-align: center;
     animation: slideText 15s linear infinite;
     white-space: nowrap;
     overflow: hidden;
     color: #fff;
-    padding: 8px 0;
+    padding: 0 10px;
 }
 
-/* Mid header: Left logo, right menu icon */
+/* Slide Text Animation */
+@keyframes slideText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* ===== Mid Header: Logo Left, Menu Icon Right ===== */
 .header-mid {
     display: flex;
-    justify-content: space-between; /* Logo left, menu icon right */
+    justify-content: space-between;
     align-items: center;
     padding: 15px;
     gap: 10px;
@@ -123,6 +134,7 @@ header {
     color: #D4A017;
 }
 
+/* ===== Bottom Header ===== */
 .header-bottom {
     padding: 10px;
     font-size: 1rem;
@@ -130,23 +142,12 @@ header {
     color: #FFFFFF;
 }
 
-/* Animations */
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-
-@keyframes slideText {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-
 @keyframes textBlink {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.5; transform: scale(1.05); }
 }
 
-/* Responsive Design for Header */
+/* ===== Responsive Design ===== */
 @media (max-width: 768px) {
     .header-top {
         flex-direction: column;
@@ -154,22 +155,20 @@ header {
     }
 
     .highlight-box {
-        max-width: 100%;
-        text-align: center;
+        width: 100%;
         font-size: 0.85rem;
     }
 
     .header-top .slide-text {
         max-width: 100%;
-        text-align: center;
         font-size: 0.75rem;
         white-space: normal;
         animation: none;
         display: block;
-        padding: 10px;
+        padding: 8px;
     }
 
-    /* Mid header changes for mobile */
+    /* Mid header mobile view */
     .menu-toggle {
         display: block;
     }
@@ -842,6 +841,7 @@ footer ul li a:hover {
         height: 60px; /* Adjusted logo size for smaller screens */
     }
 }
+
 
 
 
