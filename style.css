@@ -57,15 +57,19 @@ header {
     align-items: center;
     padding: 10px 15px;
     gap: 10px;
+    background: #000; /* Black background */
+    color: #fff;
 }
 
 .header-top .satisfaction {
-    background: #d4af37;
+    background: #d4af37; /* Golden color */
     color: #1a1a1a;
     padding: 8px 15px;
     border-radius: 5px;
     font-size: 1rem;
+    font-weight: bold;
     animation: blink 1.5s infinite;
+    white-space: nowrap;
 }
 
 .header-top .advice {
@@ -84,6 +88,69 @@ header {
     white-space: nowrap;
     overflow: hidden;
 }
+
+/* Blink Animation */
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+/* Slide Animation */
+@keyframes slideText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+.header-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 10px;
+    background: #000; /* Black background */
+    color: #fff;
+}
+
+.header-top .satisfaction {
+    background: #d4af37; /* Golden color */
+    color: #1a1a1a;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    animation: blink 1.5s infinite;
+    white-space: nowrap;
+}
+
+.header-top .advice {
+    flex: 1;
+    min-width: 200px;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.header-top .slide-text {
+    flex: 1;
+    min-width: 200px;
+    font-size: 0.9rem;
+    text-align: right;
+    animation: slideText 10s linear infinite;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Blink Animation */
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+/* Slide Animation */
+@keyframes slideText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
 
 .header-mid {
     display: flex;
@@ -586,4 +653,5 @@ footer ul li {
         font-size: 0.9rem;
     }
 }
+
 
