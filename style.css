@@ -56,11 +56,12 @@ header {
     border-radius: 5px;
     font-size: 1rem;
     animation: blink 1.5s infinite;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .header-top .slide-text {
     flex: 1;
-    min-width: 100%;
     font-size: 0.9rem;
     text-align: center;
     animation: slideText 15s linear infinite;
@@ -70,24 +71,33 @@ header {
     padding: 10px 0;
 }
 
+/* Mid header: Left logo, right menu icon */
 .header-mid {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; /* Logo left, menu icon right */
     align-items: center;
     padding: 15px;
     gap: 10px;
+    background: #000000;
 }
 
 .header-mid img {
-    height: 80px; /* Larger logo size */
+    height: 80px;
     max-width: 100%;
+}
+
+.menu-toggle {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: none; /* Show only in mobile */
 }
 
 .header-mid nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
 }
 
 .header-mid nav a {
@@ -99,15 +109,6 @@ header {
 
 .header-mid nav a:hover {
     color: #D4A017;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: #FFFFFF;
-    cursor: pointer;
 }
 
 .header-bottom {
@@ -156,11 +157,7 @@ header {
         padding: 10px;
     }
 
-    .header-mid {
-        flex-direction: column;
-        text-align: center;
-    }
-
+    /* Mid header changes for mobile */
     .menu-toggle {
         display: block;
     }
@@ -172,6 +169,7 @@ header {
         width: 100%;
         padding: 10px;
         background: #000000;
+        text-align: center;
     }
 
     .header-mid nav.active {
@@ -179,7 +177,7 @@ header {
     }
 
     .header-mid img {
-        height: 60px; /* Adjusted logo size for mobile */
+        height: 60px;
     }
 }
 
@@ -765,5 +763,6 @@ footer ul li {
         height: 60px; /* Adjusted logo size for smaller screens */
     }
 }
+
 
 
