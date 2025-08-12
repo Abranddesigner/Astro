@@ -378,7 +378,7 @@ header {
 
 /* Stats Banner */
 .stats-banner {
-    background: url('https://ik.imagekit.io/pinet/Form/Astro%20Banner.jpg?updatedAt=1754932900879') no-repeat center/cover;
+    background: url('https://i.pinimg.com/originals/c9/f0/75/c9f07594bbfd646da01c0ec50b040931.gif') no-repeat center/cover;
     padding: 40px 15px;
     color: #FFFFFF;
     text-align: center;
@@ -386,26 +386,54 @@ header {
 
 .stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
-    padding: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
 .stat {
     text-align: center;
+    padding: 15px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
 }
 
 .stat h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 8px;
-    animation: bounce 2s infinite;
     color: #D4A017;
+    font-weight: bold;
+    animation: bounce 2s infinite;
 }
 
 .stat p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #FFFFFF;
 }
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+    .stat h3 {
+        font-size: 1.5rem;
+    }
+    .stat p {
+        font-size: 0.85rem;
+    }
+}
+
 .mid-banner {
     width: 100%;
     margin: 40px 0;
@@ -799,6 +827,7 @@ footer ul li {
         height: 60px; /* Adjusted logo size for smaller screens */
     }
 }
+
 
 
 
