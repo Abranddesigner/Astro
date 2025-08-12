@@ -77,21 +77,49 @@ header {
     100% { background-color: #D4A017; }
 }
 
-.header-top .slide-text {
+/* Black center box for slide text */
+.slide-box {
+    background: #111; /* black box */
+    padding: 6px 15px;
+    border-radius: 5px;
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0; /* prevent overflow */
+}
+
+.slide-box .slide-text {
     font-size: 0.9rem;
     text-align: center;
     animation: slideText 15s linear infinite;
     white-space: nowrap;
     overflow: hidden;
     color: #fff;
-    padding: 0 10px;
 }
 
 /* Slide Text Animation */
 @keyframes slideText {
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+    }
+    .highlight-box {
+        width: 100%;
+    }
+    .slide-box {
+        width: 100%;
+        padding: 8px;
+    }
+    .slide-box .slide-text {
+        white-space: normal;
+        animation: none;
+    }
 }
 
 /* ===== Mid Header: Logo Left, Menu Icon Right ===== */
@@ -841,6 +869,7 @@ footer ul li a:hover {
         height: 60px; /* Adjusted logo size for smaller screens */
     }
 }
+
 
 
 
