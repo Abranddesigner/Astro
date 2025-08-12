@@ -256,34 +256,35 @@ header {
     text-align: left;
     color: #FFFFFF;
     background: rgba(0, 0, 0, 0.65);
-    padding: 20px 25px;
+    padding: 15px 20px; /* थोड़ा छोटा */
     border-radius: 8px;
     animation: slideInLeft 1s ease forwards;
-    max-width: 500px;
+    max-width: 400px; /* पहले 500px था */
 }
 
 .banner-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 1.25rem; /* पहले से 50% कम */
+    margin-bottom: 8px;
     color: #D4A017;
 }
 
 .banner-text p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    line-height: 1.5;
+    font-size: 0.85rem; /* पहले 1.1rem था */
+    margin-bottom: 12px;
+    line-height: 1.4;
     color: #FFFFFF;
 }
 
 .banner-text .btn {
     display: inline-block;
-    padding: 10px 18px;
-    margin: 5px 5px 0 0;
+    padding: 8px 14px; /* छोटे बटन */
+    margin: 4px 4px 0 0;
     text-decoration: none;
     color: #FFFFFF;
     border-radius: 5px;
     font-weight: bold;
     transition: all 0.3s ease;
+    font-size: 0.85rem;
 }
 
 .banner-text .btn:hover {
@@ -301,6 +302,29 @@ header {
     animation: blink 1.5s infinite;
 }
 
+/* Mobile view के लिए */
+@media (max-width: 768px) {
+    .banner-text {
+        max-width: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 12px 15px;
+    }
+
+    .banner-text h2 {
+        font-size: 1rem;
+    }
+
+    .banner-text p {
+        font-size: 0.75rem;
+    }
+
+    .banner-text .btn {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+}
 /* Main Section */
 .main {
     padding: 40px 15px;
@@ -861,6 +885,7 @@ footer ul li a:hover {
         height: 60px; /* Adjusted logo size for smaller screens */
     }
 }
+
 
 
 
