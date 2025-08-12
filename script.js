@@ -40,3 +40,11 @@ function changeTestimonial() {
 }
 
 setInterval(changeTestimonial, 5000);
+
+// Hamburger Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.header-mid nav');
+
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
