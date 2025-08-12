@@ -79,7 +79,7 @@ header {
 }
 
 .header-mid img {
-    height: 50px;
+    height: 80px; /* Increased logo size */
     max-width: 100%;
 }
 
@@ -119,7 +119,7 @@ header {
 /* Banner Styles */
 .banner {
     position: relative;
-    height: 500px; /* Increased height */
+    height: 400px;
     overflow: hidden;
 }
 
@@ -138,43 +138,41 @@ header {
     opacity: 1;
 }
 
-/* Text Left Side */
 .banner-text {
     position: absolute;
     top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-    text-align: left;
-    color: white;
-    background: rgba(26, 26, 26, 0.65);
-    padding: 20px 25px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
     border-radius: 8px;
-    animation: slideInLeft 1s ease forwards;
-    max-width: 500px;
+    animation: fadeIn 2s ease-in-out;
+    max-width: 90%;
 }
 
 .banner-text h2 {
-    font-size: 2.5rem; /* Bigger heading */
+    font-size: 2rem;
     margin-bottom: 10px;
-    color: gold;
+    color: #D4A017;
 }
 
 .banner-text p {
-    font-size: 1.1rem; /* Bigger text */
-    margin-bottom: 15px;
-    line-height: 1.5;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #FFFFFF;
 }
 
-/* Buttons */
 .banner-text .btn {
     display: inline-block;
-    padding: 10px 18px;
-    margin: 5px 5px 0 0;
+    padding: 8px 15px;
+    margin: 5px;
     text-decoration: none;
-    color: white;
+    color: #FFFFFF;
     border-radius: 5px;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .banner-text .btn:hover {
@@ -182,8 +180,7 @@ header {
 }
 
 .call-btn {
-    background: #d4af37;
-    color: black;
+    background: #000000;
     animation: blink 1.5s infinite;
 }
 
@@ -192,35 +189,6 @@ header {
     animation: blink 1.5s infinite;
 }
 
-/* Animations */
-@keyframes slideInLeft {
-    from { opacity: 0; transform: translate(-50px, -50%); }
-    to { opacity: 1; transform: translate(0, -50%); }
-}
-
-@keyframes blink {
-    0%, 50%, 100% { opacity: 1; }
-    25%, 75% { opacity: 0.7; }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .banner {
-        height: 350px;
-    }
-    .banner-text {
-        max-width: 90%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
-    .banner-text h2 {
-        font-size: 1.8rem;
-    }
-    .banner-text p {
-        font-size: 0.95rem;
-    }
-}
 /* Main Section */
 .main {
     padding: 40px 15px;
@@ -456,7 +424,7 @@ footer .left, footer .mid, footer .right {
 }
 
 footer img {
-    height: 50px;
+    height: 80px; /* Increased logo size */
     margin-bottom: 10px;
     max-width: 100%;
 }
@@ -683,5 +651,12 @@ footer ul li {
     .boxes {
         grid-template-columns: repeat(2, 1fr);
     }
-}
 
+    .header-mid img {
+        height: 60px; /* Adjusted logo size for smaller screens */
+    }
+
+    footer img {
+        height: 60px; /* Adjusted logo size for smaller screens */
+    }
+}
