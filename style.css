@@ -432,6 +432,16 @@ header {
     color: #D4A017;
     animation: bounce 2s infinite;
 }
+.call-btn {
+    background: #D4A017;
+    color: #000000;
+    animation: blink 1.5s infinite;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    animation: blink 1.5s infinite;
+}
 
 /* Testimonials */
 .testimonials {
@@ -755,4 +765,5 @@ footer ul li {
         height: 60px; /* Adjusted logo size for smaller screens */
     }
 }
+
 
