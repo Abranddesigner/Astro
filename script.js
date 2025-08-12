@@ -1,10 +1,24 @@
-// Banner Slider
+// ===== Banner Slider =====
 const bannerImages = document.querySelectorAll('#banner-slider img');
 const bannerText = document.querySelector('#banner-slider .banner-text');
 const bannerTexts = [
-    `<h2>ASTROLOGY EXPERT</h2><p>Love Problem Solution Expert<br>Wedding Problems, Desired Love, Family Problems, Marriage Problems, Husband-Wife Problems, Extra Affair Problems, Foreign Trip Problems, Love Breakup Problems, Love Marriage, Business Problems, Money Problems</p><a href="tel:8290465859" class="btn call-btn">Call Now</a><a href="https://wa.me/8290465859" class="btn whatsapp-btn">WhatsApp</a>`,
-    `<h2>ASTROLOGY EXPERT</h2><p>Love Marriage Specialist<br>Wedding Problems, Desired Love, Family Problems, Marriage Problems, Husband-Wife Problems, Extra Affair Problems, Foreign Trip Problems, Love Breakup Problems, Love Marriage, Business Problems, Money Problems</p><a href="tel:8290465859" class="btn call-btn">Call Now</a><a href="https://wa.me/8290465859" class="btn whatsapp-btn">WhatsApp</a>`,
-    `<h2>ASTROLOGY EXPERT</h2><p>Husband Wife Dispute Solution<br>Wedding Problems, Desired Love, Family Problems, Marriage Problems, Husband-Wife Problems, Extra Affair Problems, Foreign Trip Problems, Love Breakup Problems, Love Marriage, Business Problems, Money Problems</p><a href="tel:8290465859" class="btn call-btn">Call Now</a><a href="https://wa.me/8290465859" class="btn whatsapp-btn">WhatsApp</a>`
+    `<h2>ASTROLOGY EXPERT</h2>
+     <p>Love Problem Solution Expert<br>
+     Wedding Problems, Desired Love, Family Problems, Marriage Problems, Husband-Wife Problems, Extra Affair Problems, Foreign Trip Problems, Love Breakup Problems, Love Marriage, Business Problems, Money Problems</p>
+     <a href="tel:8290465859" class="btn call-btn">Call Now</a>
+     <a href="https://wa.me/918290465859" target="_blank" class="btn whatsapp-btn">WhatsApp</a>`,
+
+    `<h2>ASTROLOGY EXPERT</h2>
+     <p>Love Marriage Specialist<br>
+     Wedding Problems, Desired Love, Family Problems, Marriage Problems, Husband-Wife Problems, Extra Affair Problems, Foreign Trip Problems, Love Breakup Problems, Love Marriage, Business Problems, Money Problems</p>
+     <a href="tel:8290465859" class="btn call-btn">Call Now</a>
+     <a href="https://wa.me/918290465859" target="_blank" class="btn whatsapp-btn">WhatsApp</a>`,
+
+    `<h2>ASTROLOGY EXPERT</h2>
+     <p>Husband Wife Dispute Solution<br>
+     Wedding Problems, Desired Love, Family Problems, Marriage Problems, Husband-Wife Problems, Extra Affair Problems, Foreign Trip Problems, Love Breakup Problems, Love Marriage, Business Problems, Money Problems</p>
+     <a href="tel:8290465859" class="btn call-btn">Call Now</a>
+     <a href="https://wa.me/918290465859" target="_blank" class="btn whatsapp-btn">WhatsApp</a>`
 ];
 let bannerIndex = 0;
 
@@ -12,12 +26,15 @@ function changeBanner() {
     bannerImages[bannerIndex].classList.remove('active');
     bannerIndex = (bannerIndex + 1) % bannerImages.length;
     bannerImages[bannerIndex].classList.add('active');
+    bannerText.classList.remove('fade-in');
+    void bannerText.offsetWidth; // reflow for restart animation
     bannerText.innerHTML = bannerTexts[bannerIndex];
+    bannerText.classList.add('fade-in');
 }
 
 setInterval(changeBanner, 5000);
 
-// Scroll Animation for Boxes
+// ===== Scroll Animation for Boxes =====
 const boxes = document.querySelectorAll('.box');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -29,7 +46,7 @@ const observer = new IntersectionObserver((entries) => {
 
 boxes.forEach(box => observer.observe(box));
 
-// Testimonial Slider
+// ===== Testimonial Slider =====
 const testimonials = document.querySelectorAll('.testimonial');
 let testimonialIndex = 0;
 
@@ -41,7 +58,7 @@ function changeTestimonial() {
 
 setInterval(changeTestimonial, 5000);
 
-// Hamburger Menu Toggle
+// ===== Hamburger Menu Toggle =====
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.header-mid nav');
 
