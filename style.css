@@ -515,12 +515,26 @@ header {
     flex: 1;
     min-width: 250px;
     padding: 15px;
+    color: #FFFFFF;
 }
 
 .why-choose-section .right img {
     width: 100%;
     max-width: 350px;
     border-radius: 8px;
+}
+
+.why-choose-section h2,
+.why-choose-section h3 {
+    color: #D4A017;
+    margin-bottom: 8px;
+}
+
+.why-choose-section p {
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 .why-choose-section .icon {
@@ -537,16 +551,57 @@ header {
     color: #D4A017;
     animation: bounce 2s infinite;
 }
-.call-btn {
+
+/* Common button styles */
+.why-choose-section .btn {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 8px 8px 0 0;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.why-choose-section .btn:hover {
+    transform: scale(1.05);
+}
+
+.why-choose-section .call-btn {
     background: #D4A017;
-    color: #000000;
+    color: #000000 !important;
     animation: blink 1.5s infinite;
 }
 
-.whatsapp-btn {
+.why-choose-section .whatsapp-btn {
     background: #25D366;
+    color: #FFFFFF !important;
     animation: blink 1.5s infinite;
 }
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .why-choose-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .why-choose-section .btn {
+        width: auto;
+        display: inline-block;
+    }
+}
+
 
 /* Testimonials */
 .testimonials {
@@ -885,6 +940,7 @@ footer ul li a:hover {
         height: 60px; /* Adjusted logo size for smaller screens */
     }
 }
+
 
 
 
