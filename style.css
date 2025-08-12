@@ -52,7 +52,7 @@ header {
 }
 
 .highlight-box {
-    background: #D4A017; /* golden */
+    background: #D4A017;
     color: #000000;
     padding: 8px 15px;
     border-radius: 5px;
@@ -77,31 +77,25 @@ header {
     100% { background-color: #D4A017; }
 }
 
-/* Black center box for slide text */
+/* Black center box for typing animation */
 .slide-box {
-    background: #111; /* black box */
+    background: #111;
     padding: 6px 15px;
     border-radius: 5px;
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 0; /* prevent overflow */
+    min-width: 0;
 }
 
-.slide-box .slide-text {
+.slide-text {
     font-size: 0.9rem;
     text-align: center;
-    animation: slideText 15s linear infinite;
+    color: #fff;
     white-space: nowrap;
     overflow: hidden;
-    color: #fff;
-}
-
-/* Slide Text Animation */
-@keyframes slideText {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    border-right: 2px solid #D4A017; /* cursor effect */
 }
 
 /* Mobile Responsive */
@@ -116,12 +110,10 @@ header {
         width: 100%;
         padding: 8px;
     }
-    .slide-box .slide-text {
+    .slide-text {
         white-space: normal;
-        animation: none;
     }
 }
-
 /* ===== Mid Header: Logo Left, Menu Icon Right ===== */
 .header-mid {
     display: flex;
@@ -869,6 +861,7 @@ footer ul li a:hover {
         height: 60px; /* Adjusted logo size for smaller screens */
     }
 }
+
 
 
 
