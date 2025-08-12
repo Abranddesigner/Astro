@@ -59,6 +59,7 @@ header {
     text-decoration: none;
     animation: colorPulse 3s ease-in-out infinite;
     transition: transform 0.3s ease, background 0.3s ease;
+    text-align: center;
 }
 .highlight-box:hover {
     transform: scale(1.05);
@@ -72,14 +73,14 @@ header {
 }
 
 .header-top .slide-text {
-    flex: 1;
+    flex: 1 1 auto;
     font-size: 0.9rem;
     text-align: center;
     animation: slideText 15s linear infinite;
     white-space: nowrap;
     overflow: hidden;
-    color: #FFFFFF;
-    padding: 10px 0;
+    color: #fff;
+    padding: 8px 0;
 }
 
 /* Mid header: Left logo, right menu icon */
@@ -798,6 +799,7 @@ footer ul li {
         height: 60px; /* Adjusted logo size for smaller screens */
     }
 }
+
 
 
 
