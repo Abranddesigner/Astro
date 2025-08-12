@@ -5,49 +5,38 @@
     font-family: 'Arial', sans-serif;
 }
 
-body
-    /* ===== Background with Black, Clipart & Smoke ===== */
 body {
-  margin: 0;
-  padding: 0;
-  background: #000 url('muslim-astrologer-clipart.png') no-repeat center top;
-  background-size: cover;
-  color: #fff;
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* Smoke animation layer */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('smoke.gif') repeat center;
-  background-size: cover;
-  opacity: 0.15;
-  z-index: -1;
-  animation: smokeMove 60s linear infinite;
-}
-
-@keyframes smokeMove {
-  0% { background-position: 0 0; }
-  100% { background-position: 1000px 0; }
-}
-{
     overflow-x: hidden;
-    background: #f4f4f4;
+    background: #000000;
+    color: #FFD700;
+}
+
+/* Smoke Animation */
+.smoke-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.pinimg.com/originals/c9/f0/75/c9f07594bbfd646da01c0ec50b040931.gif') repeat;
+    animation: smoke 20s linear infinite;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+@keyframes smoke {
+    0% { background-position: 0 0; }
+    100% { background-position: 200% 200%; }
 }
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
-    color: white;
+    background: #000000;
+    color: #FFFFFF;
     padding: 15px;
     text-align: center;
     position: relative;
+    z-index: 1;
 }
 
 .header-top {
@@ -57,100 +46,27 @@ header {
     align-items: center;
     padding: 10px 15px;
     gap: 10px;
-    background: #000; /* Black background */
-    color: #fff;
 }
 
-.header-top .satisfaction {
-    background: #d4af37; /* Golden color */
-    color: #1a1a1a;
+.highlight-box {
+    background: #FFD700;
+    color: #000000;
     padding: 8px 15px;
     border-radius: 5px;
     font-size: 1rem;
-    font-weight: bold;
     animation: blink 1.5s infinite;
-    white-space: nowrap;
-}
-
-.header-top .advice {
-    flex: 1;
-    min-width: 200px;
-    font-size: 0.9rem;
-    text-align: left;
 }
 
 .header-top .slide-text {
     flex: 1;
-    min-width: 200px;
+    min-width: 100%;
     font-size: 0.9rem;
-    text-align: right;
-    animation: slideText 10s linear infinite;
+    text-align: center;
+    animation: slideText 15s linear infinite;
     white-space: nowrap;
     overflow: hidden;
+    color: #FFFFFF;
 }
-
-/* Blink Animation */
-@keyframes blink {
-    0%, 50%, 100% { opacity: 1; }
-    25%, 75% { opacity: 0; }
-}
-
-/* Slide Animation */
-@keyframes slideText {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-.header-top {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    gap: 10px;
-    background: #000; /* Black background */
-    color: #fff;
-}
-
-.header-top .satisfaction {
-    background: #d4af37; /* Golden color */
-    color: #1a1a1a;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    animation: blink 1.5s infinite;
-    white-space: nowrap;
-}
-
-.header-top .advice {
-    flex: 1;
-    min-width: 200px;
-    font-size: 0.9rem;
-    text-align: left;
-}
-
-.header-top .slide-text {
-    flex: 1;
-    min-width: 200px;
-    font-size: 0.9rem;
-    text-align: right;
-    animation: slideText 10s linear infinite;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-/* Blink Animation */
-@keyframes blink {
-    0%, 50%, 100% { opacity: 1; }
-    25%, 75% { opacity: 0; }
-}
-
-/* Slide Animation */
-@keyframes slideText {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-
 
 .header-mid {
     display: flex;
@@ -173,20 +89,21 @@ header {
 }
 
 .header-mid nav a {
-    color: white;
+    color: #FFFFFF;
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s;
 }
 
 .header-mid nav a:hover {
-    color: #d4af37;
+    color: #FFD700;
 }
 
 .header-bottom {
     padding: 10px;
     font-size: 1rem;
     animation: textBlink 2s ease-in-out infinite;
+    color: #FFFFFF;
 }
 
 /* Banner Styles */
@@ -211,101 +128,73 @@ header {
     opacity: 1;
 }
 
-/* Banner Text Left Side */
 .banner-text {
     position: absolute;
     top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-    text-align: left;
-    color: white;
-    background: rgba(26, 26, 26, 0.7);
-    padding: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
     border-radius: 8px;
-    animation: fadeIn 1.5s ease-in-out;
-    max-width: 500px;
+    animation: fadeIn 2s ease-in-out;
+    max-width: 90%;
 }
 
 .banner-text h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-bottom: 10px;
-    color: gold;
+    color: #FFD700;
 }
 
 .banner-text p {
     font-size: 1rem;
-    margin-bottom: 15px;
-    line-height: 1.5;
+    margin-bottom: 10px;
+    color: #FFFFFF;
 }
 
-/* Buttons Style */
 .banner-text .btn {
     display: inline-block;
-    padding: 10px 18px;
-    margin: 5px 5px 0 0;
+    padding: 8px 15px;
+    margin: 5px;
     text-decoration: none;
-    color: white;
+    color: #FFFFFF;
     border-radius: 5px;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .banner-text .btn:hover {
     transform: scale(1.05);
-    filter: brightness(1.2);
 }
 
-/* Call Button */
 .call-btn {
-    background: #d4af37; /* Gold */
-    color: black;
+    background: #000000;
     animation: blink 1.5s infinite;
 }
 
-/* WhatsApp Button */
 .whatsapp-btn {
-    background: #25D366; /* WhatsApp green */
+    background: #25D366;
     animation: blink 1.5s infinite;
 }
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-50%) translateX(-20px); }
-    to { opacity: 1; transform: translateY(-50%) translateX(0); }
-}
-
-@keyframes blink {
-    0%, 50%, 100% { opacity: 1; }
-    25%, 75% { opacity: 0.7; }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .banner-text {
-        max-width: 90%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
-}
-
 
 /* Main Section */
 .main {
     padding: 40px 15px;
     text-align: center;
-    background: #ffffff;
+    background: #000000;
 }
 
 .main h1 {
     font-size: 2.5rem;
-    color: #1a1a1a;
+    color: #FFD700;
     margin-bottom: 15px;
 }
 
 .main .why-choose {
     font-size: 2rem;
-    background: linear-gradient(45deg, #1a1a1a, #d4af37);
+    background: linear-gradient(45deg, #FFD700, #FFFFFF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 15px;
@@ -315,11 +204,11 @@ header {
     font-size: 1rem;
     max-width: 700px;
     margin: 0 auto 20px;
-    color: #4b5563;
+    color: #FFFFFF;
 }
 
 .animation-border {
-    border: 2px solid #d4af37;
+    border: 2px solid #FFD700;
     border-radius: 8px;
     height: 4px;
     width: 100px;
@@ -336,7 +225,7 @@ header {
 }
 
 .box {
-    background: #f4f4f4;
+    background: #1a1a1a;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -362,17 +251,19 @@ header {
 .box h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    color: #FFD700;
 }
 
 .box p {
     font-size: 0.9rem;
+    color: #FFFFFF;
 }
 
 /* Stats Banner */
 .stats-banner {
     background: url('https://ik.imagekit.io/pinet/Form/Astro%20Banner.jpg?updatedAt=1754932900879') no-repeat center/cover;
     padding: 40px 15px;
-    color: white;
+    color: #FFFFFF;
     text-align: center;
 }
 
@@ -391,10 +282,12 @@ header {
     font-size: 1.8rem;
     margin-bottom: 8px;
     animation: bounce 2s infinite;
+    color: #FFD700;
 }
 
 .stat p {
     font-size: 0.9rem;
+    color: #FFFFFF;
 }
 
 /* Why Choose Us Section */
@@ -402,7 +295,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     padding: 40px 15px;
-    background: #f4f4f4;
+    background: #000000;
     gap: 15px;
 }
 
@@ -422,30 +315,34 @@ header {
     display: flex;
     align-items: flex-start;
     margin: 10px 0;
-    color: #1a1a1a;
+    color: #FFFFFF;
     font-size: 0.9rem;
 }
 
 .why-choose-section .icon::before {
     content: '★';
     margin-right: 8px;
-    color: #d4af37;
+    color: #FFD700;
     animation: bounce 2s infinite;
 }
 
 /* Testimonials */
 .testimonials {
     padding: 40px 15px;
-    background: #ffffff;
+    background: #000000;
     text-align: center;
 }
 
 .testimonials h2 {
     font-size: 2rem;
-    background: linear-gradient(45deg, #1a1a1a, #d4af37);
+    background: linear-gradient(45deg, #FFD700, #FFFFFF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 15px;
+}
+
+.testimonials p {
+    color: #FFFFFF;
 }
 
 .testimonial-slider {
@@ -458,7 +355,7 @@ header {
 .testimonial {
     display: none;
     padding: 15px;
-    background: #f4f4f4;
+    background: #1a1a1a;
     border-radius: 8px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
@@ -477,16 +374,18 @@ header {
 
 .testimonial p {
     font-size: 0.9rem;
+    color: #FFFFFF;
 }
 
 .testimonial h4 {
     font-size: 1rem;
+    color: #FFD700;
 }
 
 /* Footer */
 footer {
-    background: #1a1a1a;
-    color: white;
+    background: #000000;
+    color: #FFD700;
     padding: 40px 15px;
     display: flex;
     flex-wrap: wrap;
@@ -511,7 +410,7 @@ footer .btn {
     padding: 8px 15px;
     margin: 5px;
     text-decoration: none;
-    color: white;
+    color: #FFFFFF;
     border-radius: 5px;
     transition: transform 0.3s;
 }
@@ -533,6 +432,7 @@ footer ul {
 footer ul li {
     margin: 5px 0;
     font-size: 0.9rem;
+    color: #FFFFFF;
 }
 
 /* Animations */
@@ -557,8 +457,8 @@ footer ul li {
 }
 
 @keyframes borderPulse {
-    0%, 100% { border-color: #d4af37; }
-    50% { border-color: #1a1a1a; }
+    0%, 100% { border-color: #FFD700; }
+    50% { border-color: #FFFFFF; }
 }
 
 @keyframes rotate {
@@ -583,7 +483,13 @@ footer ul li {
         text-align: center;
     }
 
-    .header-top .advice, .header-top .slide-text {
+    .highlight-box {
+        max-width: 100%;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    .header-top .slide-text {
         max-width: 100%;
         text-align: center;
         font-size: 0.85rem;
@@ -675,7 +581,11 @@ footer ul li {
         font-size: 0.8rem;
     }
 
-    .header-top .satisfaction, .header-bottom {
+    .highlight-box {
+        font-size: 0.9rem;
+    }
+
+    .header-bottom {
         font-size: 0.9rem;
     }
 
@@ -683,6 +593,3 @@ footer ul li {
         font-size: 0.9rem;
     }
 }
-
-
-
