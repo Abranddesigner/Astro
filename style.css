@@ -405,6 +405,30 @@ header {
     font-size: 0.9rem;
     color: #FFFFFF;
 }
+.mid-banner {
+    width: 100%;
+    margin: 40px 0;
+}
+
+.mid-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animation for banner */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+@media (max-width: 768px) {
+    .mid-banner img {
+        border-radius: 5px;
+    }
+}
 
 /* Why Choose Us Section */
 .why-choose-section {
@@ -774,6 +798,7 @@ footer ul li {
         height: 60px; /* Adjusted logo size for smaller screens */
     }
 }
+
 
 
 
