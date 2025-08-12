@@ -8,7 +8,7 @@
 body {
     overflow-x: hidden;
     background: #000000;
-    color: #FFD700;
+    color: #D4A017;
 }
 
 /* Smoke Animation */
@@ -18,7 +18,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://i.pinimg.com/originals/c9/f0/75/c9f07594bbfd646da01c0ec50b040931.gif') repeat;
+    background: url('https://ik.imagekit.io/pinet/Form/smoke.png?updatedAt=1727691395951') repeat;
     animation: smoke 20s linear infinite;
     opacity: 0.3;
     z-index: -1;
@@ -49,7 +49,7 @@ header {
 }
 
 .highlight-box {
-    background: #FFD700;
+    background: #D4A017;
     color: #000000;
     padding: 8px 15px;
     border-radius: 5px;
@@ -66,6 +66,7 @@ header {
     white-space: nowrap;
     overflow: hidden;
     color: #FFFFFF;
+    padding: 10px 0;
 }
 
 .header-mid {
@@ -96,7 +97,16 @@ header {
 }
 
 .header-mid nav a:hover {
-    color: #FFD700;
+    color: #D4A017;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 .header-bottom {
@@ -145,7 +155,7 @@ header {
 .banner-text h2 {
     font-size: 2rem;
     margin-bottom: 10px;
-    color: #FFD700;
+    color: #D4A017;
 }
 
 .banner-text p {
@@ -188,13 +198,13 @@ header {
 
 .main h1 {
     font-size: 2.5rem;
-    color: #FFD700;
+    color: #D4A017;
     margin-bottom: 15px;
 }
 
 .main .why-choose {
     font-size: 2rem;
-    background: linear-gradient(45deg, #FFD700, #FFFFFF);
+    background: linear-gradient(45deg, #D4A017, #FFFFFF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 15px;
@@ -208,7 +218,7 @@ header {
 }
 
 .animation-border {
-    border: 2px solid #FFD700;
+    border: 2px solid #D4A017;
     border-radius: 8px;
     height: 4px;
     width: 100px;
@@ -233,6 +243,20 @@ header {
     transform: translateY(40px);
     opacity: 0;
     transition: all 0.5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.box:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(212, 160, 23, 0.3) 10%, transparent 10.01%);
+    transform: translate(-50%, -50%) scale(0);
+    animation: cursorGlow 0.5s forwards;
 }
 
 .box.visible {
@@ -251,7 +275,7 @@ header {
 .box h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: #FFD700;
+    color: #D4A017;
 }
 
 .box p {
@@ -282,7 +306,7 @@ header {
     font-size: 1.8rem;
     margin-bottom: 8px;
     animation: bounce 2s infinite;
-    color: #FFD700;
+    color: #D4A017;
 }
 
 .stat p {
@@ -322,7 +346,7 @@ header {
 .why-choose-section .icon::before {
     content: '★';
     margin-right: 8px;
-    color: #FFD700;
+    color: #D4A017;
     animation: bounce 2s infinite;
 }
 
@@ -335,7 +359,7 @@ header {
 
 .testimonials h2 {
     font-size: 2rem;
-    background: linear-gradient(45deg, #FFD700, #FFFFFF);
+    background: linear-gradient(45deg, #D4A017, #FFFFFF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 15px;
@@ -379,13 +403,13 @@ header {
 
 .testimonial h4 {
     font-size: 1rem;
-    color: #FFD700;
+    color: #D4A017;
 }
 
 /* Footer */
 footer {
     background: #000000;
-    color: #FFD700;
+    color: #D4A017;
     padding: 40px 15px;
     display: flex;
     flex-wrap: wrap;
@@ -457,7 +481,7 @@ footer ul li {
 }
 
 @keyframes borderPulse {
-    0%, 100% { border-color: #FFD700; }
+    0%, 100% { border-color: #D4A017; }
     50% { border-color: #FFFFFF; }
 }
 
@@ -476,6 +500,11 @@ footer ul li {
     to { transform: translateX(0); }
 }
 
+@keyframes cursorGlow {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-top {
@@ -492,7 +521,11 @@ footer ul li {
     .header-top .slide-text {
         max-width: 100%;
         text-align: center;
-        font-size: 0.85rem;
+        font-size: 0.75rem;
+        white-space: normal;
+        animation: none;
+        display: block;
+        padding: 10px;
     }
 
     .header-mid {
@@ -500,13 +533,31 @@ footer ul li {
         text-align: center;
     }
 
+    .menu-toggle {
+        display: block;
+    }
+
     .header-mid nav {
+        display: none;
         flex-direction: column;
         gap: 8px;
+        width: 100%;
+        padding: 10px;
+        background: #000000;
+    }
+
+    .header-mid nav.active {
+        display: flex;
     }
 
     .banner {
         height: 250px;
+    }
+
+    .banner img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
 
     .banner-text h2 {
@@ -530,7 +581,11 @@ footer ul li {
         font-size: 1.5rem;
     }
 
-    .boxes, .stats {
+    .boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
         grid-template-columns: 1fr;
     }
 
@@ -591,5 +646,9 @@ footer ul li {
 
     .header-mid nav a {
         font-size: 0.9rem;
+    }
+
+    .boxes {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
