@@ -4,19 +4,19 @@ const bannerText = document.querySelector('#banner-slider .banner-text');
 const bannerTexts = [
     `<h2>ASTROLOGY EXPERT</h2>
      <p>Love Problem Solution Expert<br>
-     Wedding Problems, Desired Love, Family Problems, Marriage Problems, Husband-Wife Problems, Extra Affair Problems, Foreign Trip Problems, Love Breakup Problems, Love Marriage, Business Problems, Money Problems</p>
+     Love Marriage, Family, Breakup, Business, Money Problems</p>
      <a href="tel:8290465859" class="btn call-btn">Call Now</a>
      <a href="https://wa.me/918290465859" target="_blank" class="btn whatsapp-btn">WhatsApp</a>`,
 
     `<h2>ASTROLOGY EXPERT</h2>
      <p>Love Marriage Specialist<br>
-     Wedding Problems, Desired Love, Family Problems, Marriage Problems, Husband-Wife Problems, Extra Affair Problems, Foreign Trip Problems, Love Breakup Problems, Love Marriage, Business Problems, Money Problems</p>
+     Love Marriage, Family, Breakup, Business, Money Problems</p>
      <a href="tel:8290465859" class="btn call-btn">Call Now</a>
      <a href="https://wa.me/918290465859" target="_blank" class="btn whatsapp-btn">WhatsApp</a>`,
 
     `<h2>ASTROLOGY EXPERT</h2>
      <p>Husband Wife Dispute Solution<br>
-     Wedding Problems, Desired Love, Family Problems, Marriage Problems, Husband-Wife Problems, Extra Affair Problems, Foreign Trip Problems, Love Breakup Problems, Love Marriage, Business Problems, Money Problems</p>
+     Love Marriage, Family, Breakup, Business, Money Problems</p>
      <a href="tel:8290465859" class="btn call-btn">Call Now</a>
      <a href="https://wa.me/918290465859" target="_blank" class="btn whatsapp-btn">WhatsApp</a>`
 ];
@@ -113,3 +113,4 @@ if (statsSection) {
     }, { threshold: 0.4 });
     statsObserver.observe(statsSection);
 }
+
