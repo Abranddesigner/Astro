@@ -5,7 +5,38 @@
     font-family: 'Arial', sans-serif;
 }
 
+body
+    /* ===== Background with Black, Clipart & Smoke ===== */
 body {
+  margin: 0;
+  padding: 0;
+  background: #000 url('muslim-astrologer-clipart.png') no-repeat center top;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Smoke animation layer */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('smoke.gif') repeat center;
+  background-size: cover;
+  opacity: 0.15;
+  z-index: -1;
+  animation: smokeMove 60s linear infinite;
+}
+
+@keyframes smokeMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 0; }
+}
+{
     overflow-x: hidden;
     background: #f4f4f4;
 }
@@ -555,3 +586,4 @@ footer ul li {
         font-size: 0.9rem;
     }
 }
+
