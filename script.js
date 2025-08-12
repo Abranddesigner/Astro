@@ -1,21 +1,35 @@
-// ===== Typing Animation for Banner =====
+// ===== Typing Animation for Banner with Buttons =====
 const bannerImages = document.querySelectorAll('#banner-slider img');
 const bannerText = document.querySelector('#banner-slider .banner-text');
 const bannerTexts = [
-    `ASTROLOGY EXPERT - Love, Marriage, Family & Business Solutions`,
-    `Love Marriage Specialist - All Life Problem Solutions`,
-    `Husband Wife Dispute & Relationship Problem Solutions`
+    `<h2>ASTROLOGY EXPERT</h2>
+     <p>Love, Marriage, Family & Business Solutions</p>
+     <a href="tel:8290465859" class="btn call-btn">Call Now</a>
+     <a href="https://wa.me/918290465859" target="_blank" class="btn whatsapp-btn">WhatsApp</a>`,
+
+    `<h2>Love Marriage Specialist</h2>
+     <p>All Types of Life Problem Solutions</p>
+     <a href="tel:8290465859" class="btn call-btn">Call Now</a>
+     <a href="https://wa.me/918290465859" target="_blank" class="btn whatsapp-btn">WhatsApp</a>`,
+
+    `<h2>Husband Wife Dispute Solution</h2>
+     <p>Relationship & Family Problem Solutions</p>
+     <a href="tel:8290465859" class="btn call-btn">Call Now</a>
+     <a href="https://wa.me/918290465859" target="_blank" class="btn whatsapp-btn">WhatsApp</a>`
 ];
 let bannerIndex = 0;
 let charIndex = 0;
 let typingInterval;
 
 function typeText(text) {
-    bannerText.textContent = text.substring(0, charIndex);
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = text;
+    const fullText = tempDiv.innerHTML;
+    bannerText.innerHTML = fullText.substring(0, charIndex);
     charIndex++;
-    if (charIndex > text.length) {
+    if (charIndex > fullText.length) {
         clearInterval(typingInterval);
-        setTimeout(changeBanner, 2000); // delay before next banner
+        setTimeout(changeBanner, 2000);
     }
 }
 
@@ -25,10 +39,10 @@ function changeBanner() {
     bannerImages[bannerIndex].classList.add('active');
 
     charIndex = 0;
-    typingInterval = setInterval(() => typeText(bannerTexts[bannerIndex]), 50);
+    typingInterval = setInterval(() => typeText(bannerTexts[bannerIndex]), 30);
 }
 
-changeBanner(); // start first time
+changeBanner();
 
 // ===== Scroll Animation for Boxes =====
 const boxes = document.querySelectorAll('.box');
@@ -60,7 +74,7 @@ menuToggle.addEventListener('click', () => {
 
 // ===== Stats Counter Animation =====
 const counters = document.querySelectorAll('.stat h3');
-const speed = 200; // smaller = faster
+const speed = 200;
 const counterObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -79,9 +93,8 @@ const counterObserver = new IntersectionObserver((entries, observer) => {
                 };
                 updateCount();
             });
-            observer.disconnect(); // run only once
+            observer.disconnect();
         }
     });
 }, { threshold: 0.5 });
-
 counters.forEach(counter => counterObserver.observe(counter));
