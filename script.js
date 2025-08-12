@@ -1,57 +1,34 @@
-// ===== Banner Slider =====
+// ===== Typing Animation for Banner =====
 const bannerImages = document.querySelectorAll('#banner-slider img');
 const bannerText = document.querySelector('#banner-slider .banner-text');
 const bannerTexts = [
-    `<h2>ASTROLOGY EXPERT</h2>
-     <p>Love Problem Solution Expert<br>
-     Love Marriage, Family, Breakup, Business, Money Problems</p>
-     <a href="tel:8290465859" class="btn call-btn">Call Now</a>
-     <a href="https://wa.me/918290465859" target="_blank" class="btn whatsapp-btn">WhatsApp</a>`,
-
-    `<h2>ASTROLOGY EXPERT</h2>
-     <p>Love Marriage Specialist<br>
-     Love Marriage, Family, Breakup, Business, Money Problems</p>
-     <a href="tel:8290465859" class="btn call-btn">Call Now</a>
-     <a href="https://wa.me/918290465859" target="_blank" class="btn whatsapp-btn">WhatsApp</a>`,
-
-    `<h2>ASTROLOGY EXPERT</h2>
-     <p>Husband Wife Dispute Solution<br>
-     Love Marriage, Family, Breakup, Business, Money Problems</p>
-     <a href="tel:8290465859" class="btn call-btn">Call Now</a>
-     <a href="https://wa.me/918290465859" target="_blank" class="btn whatsapp-btn">WhatsApp</a>`
+    `ASTROLOGY EXPERT - Love, Marriage, Family & Business Solutions`,
+    `Love Marriage Specialist - All Life Problem Solutions`,
+    `Husband Wife Dispute & Relationship Problem Solutions`
 ];
 let bannerIndex = 0;
+let charIndex = 0;
+let typingInterval;
+
+function typeText(text) {
+    bannerText.textContent = text.substring(0, charIndex);
+    charIndex++;
+    if (charIndex > text.length) {
+        clearInterval(typingInterval);
+        setTimeout(changeBanner, 2000); // delay before next banner
+    }
+}
 
 function changeBanner() {
     bannerImages[bannerIndex].classList.remove('active');
     bannerIndex = (bannerIndex + 1) % bannerImages.length;
     bannerImages[bannerIndex].classList.add('active');
-    bannerText.classList.remove('fade-in');
-    void bannerText.offsetWidth; // reflow
-    bannerText.innerHTML = bannerTexts[bannerIndex];
-    bannerText.classList.add('fade-in');
-}
-setInterval(changeBanner, 5000);
 
-// ===== Typing Animation for Top Header Slide Text =====
-function typingEffect(element, text, speed = 100) {
-    let i = 0;
-    element.textContent = "";
-    function typeChar() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeChar, speed);
-        } else {
-            setTimeout(() => typingEffect(element, text, speed), 3000);
-        }
-    }
-    typeChar();
+    charIndex = 0;
+    typingInterval = setInterval(() => typeText(bannerTexts[bannerIndex]), 50);
 }
-const slideTextEl = document.querySelector('.header-top .slide-text');
-if (slideTextEl) {
-    typingEffect(slideTextEl, slideTextEl.textContent.trim(), 80);
-}
+
+changeBanner(); // start first time
 
 // ===== Scroll Animation for Boxes =====
 const boxes = document.querySelectorAll('.box');
@@ -77,40 +54,34 @@ setInterval(changeTestimonial, 5000);
 // ===== Hamburger Menu Toggle =====
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.header-mid nav');
-if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
+
+// ===== Stats Counter Animation =====
+const counters = document.querySelectorAll('.stat h3');
+const speed = 200; // smaller = faster
+const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const updateCount = () => {
+                    const increment = Math.ceil(target / speed);
+                    if (count < target) {
+                        count += increment;
+                        counter.textContent = count;
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                updateCount();
+            });
+            observer.disconnect(); // run only once
+        }
     });
-}
+}, { threshold: 0.5 });
 
-// ===== Stats Counting Animation =====
-const counters = document.querySelectorAll('.count');
-let statsStarted = false;
-
-function countUp(counter) {
-    const target = +counter.getAttribute('data-target');
-    const speed = target / 200;
-    let count = 0;
-    const updateCount = () => {
-        count += speed;
-        if (count < target) {
-            counter.textContent = Math.ceil(count);
-            requestAnimationFrame(updateCount);
-        } else {
-            counter.textContent = target;
-        }
-    };
-    updateCount();
-}
-
-const statsSection = document.querySelector('.stats-banner');
-if (statsSection) {
-    const statsObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !statsStarted) {
-            statsStarted = true;
-            counters.forEach(countUp);
-        }
-    }, { threshold: 0.4 });
-    statsObserver.observe(statsSection);
-}
-
+counters.forEach(counter => counterObserver.observe(counter));
